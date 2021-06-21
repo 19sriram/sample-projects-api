@@ -49,8 +49,10 @@ function randomConsultants() {
     const numConsultants = faker.datatype.number(3);
     const consultants = [];
     for (let i = 0; i < numConsultants; i++) {
+        const id = faker.datatype.uuid();
         consultants.push({
-            id: faker.datatype.uuid(),
+            id,
+            avatar: 'https://i.pravatar.cc/100?u=' + id,
             firstName: faker.name.firstName(),
             lastName: faker.name.lastName(),
         });
