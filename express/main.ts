@@ -1,11 +1,13 @@
 import * as os from 'os';
 import express from 'express';
+import cors from 'cors';
 import { getProjects, getProjectDetails } from './projectsRepo';
 
 const PORT = 7000;
 const app = express();
 
 app.set('port', PORT);
+app.use(cors());
 
 app.get('/projects', (req, res, _next) => {
     const { pageNumber, limit } = req.query;
